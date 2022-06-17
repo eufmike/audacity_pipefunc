@@ -1,7 +1,9 @@
 import os
 import sys
 import json
+from time import sleep
 from pathlib import Path
+
 
 if sys.platform == 'win32':
     print("pipe-test.py, running on windows")
@@ -25,8 +27,9 @@ if not os.path.exists(FROMNAME):
     sys.exit()
 
 print("-- Both pipes exist.  Good.")
-
+sleep(0.01)
 TOFILE = open(TONAME, 'w')
+
 print("-- File to write to has been opened")
 FROMFILE = open(FROMNAME, 'rt')
 print("-- File to read from has now been opened too\r\n")
